@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f0f0f;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .navbar {
+      background: #111;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 28px;
+      color: #00eaff;
+      font-weight: bold;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: #f0f0f0;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #00eaff;
+      color: #000;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px;
+      background: #fff;
+      margin: 4px 0;
+      width: 25px;
+    }
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to bottom right, #000, #1a1a1a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 60px;
+    }
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      color: #00eaff;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      padding: 12px 25px;
+      background: #ff6a00;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #e55b00;
+    }
+    .section {
+      padding: 80px 0;
+    }
+    .section h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #00eaff;
+    }
+    .project-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .project-card {
+      background: #1f1f1f;
+      padding: 20px;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .project-card img {
+        width: 100%;
+          height: 200px;
+         object-fit: cover;
+         border-radius: 6px;
+         margin-bottom: 10px;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      background: #292929;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      background: #2b2b2b;
+      color: #fff;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #aaa;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #111;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+    .project-preview {
+  display: block;
+  width: 100%;
+  height: 250px; 
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">MyPortfolio</h1>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <img src="fortunee.png" alt="Profile Picture" class="profile-pic" />
+      <h2>Hi, I'm Fortune 👋</h2>
+      <p>A Creative Web Developer & Designer</p>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate developer with skills in HTML, CSS, JavaScript, and UI/UX Design. I enjoy turning complex problems into simple, beautiful solutions.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+             <h3>Login Page</h3>
+             <p>A clean and responsive login form built using HTML and CSS.</p>
+            <a href="https://fortune093.github.io/login-page/" target="_blank">
+              <img src="login-screenshot.png" alt="Login Page Screenshot" class="project-preview" />
+             </a>
+        </div>
+        <div class="project-card">
+  <h3>Calculator</h3>
+  <p>A sleek and fully functional calculator built with HTML, CSS, and JavaScript.</p>
+
+  <a href="https://fortune093.github.io/CALCULATOR/" target="_blank">
+    <img src="calculator.png" alt="Calculator Project Screenshot" class="project-preview" />
+  </a>
+</div>
+<div class="project-card">
+  <h3>Tic Tac Toe</h3>
+  <p>A fully functional Tic Tac Toe game built with HTML, CSS, and JavaScript.</p>
+
+  <a href="https://fortune093.github.io/Tic-Tac-Toe/" target="_blank">
+    <img src="X and O.png" alt="Tic Tac Toe Screenshot" class="project-preview" />
+  </a>
+</div>
+
+      </div>
+    </div>
+     </section>
+
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/xjkopvve" method="POST" class="contact-form">
+         <input type="text" name="name" placeholder="Your Name" required />
+         <input type="email" name="email" placeholder="Your Email" required />
+         <textarea name="message" placeholder="Your Message" required></textarea>
+         <button type="submit" class="btn">Send Message</button>
+        </form>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Fortune. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
